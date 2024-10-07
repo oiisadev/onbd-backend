@@ -89,26 +89,26 @@
       width: 100%;
     }
     /* 고유한 클래스 이름을 사용하여 충돌 방지 */
-  .recommendation-button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* 버튼 사이 간격 */
-    margin-top: 20px;
-  }
+    .recommendation-button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* 버튼 사이 간격 */
+      margin-top: 20px;
+    }
 
-  .recommendation-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-  }
+    .recommendation-button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
 
-  .recommendation-button:hover {
-    background-color: #2980b9;
-  }
+    .recommendation-button:hover {
+      background-color: #2980b9;
+    }
   </style>
 </head>
 <body>
@@ -169,93 +169,37 @@
             <button class="recommendation-button" onclick="window.location.href='https://smartstore.naver.com/deweylabs/products/6259954641'">
               오이사 스마트스토어
             </button>
-  </div>
-</div>
-      <!-- 백엔드에서 오는 응답을 출력할 요소 -->
-  <div id="response">Loading...</div>
+          </div>
+      </div>
     </div>
   </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const swiper = new Swiper('.swiper-container', {
-        direction: 'horizontal', 
-        slidesPerView: 1, 
-        spaceBetween: 0, 
-        loop: false,
-        allowTouchMove: true, 
-        noSwipingClass: 'swiper-no-swiping',
-        centeredSlides: true, 
-        on: {
-          slideChangeTransitionEnd: function() {
-            swiper.update();
-          }
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'horizontal', // 가로 스와이프
+      slidesPerView: 1, // 한 번에 한 슬라이드만 보이게 설정
+      spaceBetween: 0, // 슬라이드 간격을 없앰
+      loop: false,
+      allowTouchMove: true, // 터치로 스와이프 가능
+      noSwipingClass: 'swiper-no-swiping',
+      centeredSlides: true, // 슬라이드가 화면 중앙에 오도록
+      on: {
+        slideChangeTransitionEnd: function() {
+          swiper.update(); // 스와이프 후 화면 비율 고정
         }
-      });
-
-      let answer1 = '';
-      let answer2 = '';
-      let answer3 = '';
-
-      // 설문 답변 저장
-      function selectAnswer1(answer) {
-        answer1 = answer;
-        nextSlide();
       }
-
-      function selectAnswer2(answer) {
-        answer2 = answer;
-        nextSlide();
-      }
-
-      function selectAnswer3(answer) {
-        answer3 = answer;
-        showLoadingScreen();  // 로딩 화면으로 이동
-      }
-
-      // 최종 결과 도출 함수
-      function showProductRecommendation() {
-        let recommendedProductImage = '';
-
-        // 두 가지 결과에 따라 다른 이미지 출력
-        if (answer3 === '편리함' || answer3 === '포이컵') {
-          recommendedProductImage = 'https://oiisa.com/web/product/small/202405/68928d185e039a2bb0f9ab99c1db9331.png';
-        } else if (answer3 === '벨') {
-          recommendedProductImage = 'https://raw.githubusercontent.com/oiisadev/image_forder/e8151879f676e40880ae2e0fd831143c5b0c3968/assets/images/IMG_6819.JPG';  // 기존 이미지
-        }
-
-        // HTML에 이미지 출력
-        document.getElementById('recommended-product-image').src = recommendedProductImage;
-      }
-
-      // 로딩 후 추천 제품 화면으로 이동
-      function showLoadingScreen() {
-        swiper.slideNext();
-        setTimeout(() => {
-          showProductRecommendation();  // 로딩 후 제품 추천
-          swiper.slideNext();
-        }, 1500);  // 1.5초 대기 후 이동
-      }
-
-      function nextSlide() {
-        swiper.slideNext();
-      }
-
-      // 백엔드 서버에서 데이터를 받아오는 코드
-      fetch('https://onbd-backend.onrender.com/api/hello')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.message);  // 콘솔에 메시지 출력
-          document.getElementById('response').textContent = data.message;  // 화면에 메시지 출력
-        })
-        .catch(error => {
-          console.error('Error fetching data from the backend:', error);
-        });
     });
-  </script>
 
-</body>
-</html>
+    // 슬라이드 넘어가는 함수 추가
+    function nextSlide() {
+      swiper.slideNext();  // Swiper의 다음 슬라이드로 넘어감
+    }
 
+    let answer1 = '';
+    let answer2 = '';
+    let answer3 = '';
 
+    // 설문 답변 저장
+    function selectAnswer1(answer) {
+     
