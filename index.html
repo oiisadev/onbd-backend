@@ -111,6 +111,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -139,3 +140,43 @@
       <div class="swiper-slide">
         <h1>생리컵에서 가장 중요하게 생각하는 요소는? (2/3)</h1>
         <div class="survey-buttons">
+          <button onclick="selectAnswer2('편리함')">편리함</button>
+          <button onclick="selectAnswer2('친환경성')">친환경성</button>
+          <button onclick="selectAnswer2('가격')">가격</button>
+        </div>
+      </div>
+      <!-- 설문조사 3 -->
+      <div class="swiper-slide">
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (3/3)</h1>
+        <div class="survey-buttons">
+          <button onclick="selectAnswer3('편리함')">편리함</button>
+          <button onclick="selectAnswer3('포이컵')">포이컵</button>
+          <button onclick="selectAnswer3('벨')">벨</button>
+        </div>
+      </div>
+      <!-- 로딩 화면 -->
+      <div class="swiper-slide" id="loading-screen">
+        <div class="loading-icon"></div>
+        <p>고객님에게 딱 맞는 제품을 추천해드리기 위해 분석 중입니다...</p>
+      </div>
+      <!-- 최종 추천 제품 화면 -->
+      <div class="swiper-slide" id="product-recommendation-screen">
+          <h1>고객님께 추천드리는 제품은?</h1>
+          <img id="recommended-product-image" src="" alt="추천 제품 이미지" class="product-image">
+          <div class="recommendation-button-container">
+            <button class="recommendation-button" onclick="window.location.href='https://oiisa.com/product/%EC%98%A4%EC%9D%B4%EC%82%AC-%ED%8F%AC%EC%9D%B4%EC%BB%B5-%EC%B0%A8%EC%84%B8%EB%8C%80-%EC%83%9D%EB%A6%AC%EC%BB%B5-%EC%83%9D%EB%A6%AC%EB%94%94%EC%8A%A4%ED%81%AC-%EA%B7%B9%EA%B0%95%EC%9D%98-%EC%B0%A9%EC%9A%A9%EA%B0%90/11/category/1/display/2/'">
+              오이사 공식몰
+            </button>
+            <button class="recommendation-button" onclick="window.location.href='https://smartstore.naver.com/deweylabs/products/6259954641'">
+              오이사 스마트스토어
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- 분리된 main.js 스크립트 로드 -->
+  <script src="main.js"></script>
+</body>
+</html>
