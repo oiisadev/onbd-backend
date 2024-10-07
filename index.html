@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OIISA Onboarding Page</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      overflow: hidden; /* 화면 넘침 방지 */
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100vh;
+      max-width: 420px; /* 데스크탑에서도 모바일처럼 긴 화면 유지 */
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .next-button {
+      position: absolute;
+      bottom: 50px; /* 화면 하단에서 조금 더 위로 */
+      right: 20px;
+    }
+
+    .product-image {
+      max-width: 60%;
+      height: auto;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .loading-icon {
+      margin: 20px 0;
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .survey-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* 버튼 간격 추가 */
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .survey-buttons button {
+      width: 100%;
+    }
+    /* 고유한 클래스 이름을 사용하여 충돌 방지 */
+  .recommendation-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 버튼 사이 간격 */
+    margin-top: 20px;
+  }
+
+  .recommendation-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .recommendation-button:hover {
+    background-color: #2980b9;
+  }
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- 첫 번째 화면: 생리컵 설명 -->
+      <div class="swiper-slide">
+        <h1>생리컵이란 무엇인가요?</h1>
+        <p>생리컵은 편리하고 친환경적인 생리 용품입니다.</p>
+        <button class="next-button" onclick="nextSlide()">다음 페이지</button>
+      </div>
+      <!-- 두 번째 화면: 고객 후기 -->
+      <div class="swiper-slide">
+        <h1>사용 전후 변화</h1>
+        <p>"처음엔 걱정했지만 지금은 너무 만족해요!"</p>
+        <button class="next-button" onclick="nextSlide()">다음 페이지</button>
+      </div>
+      <!-- 설문조사 1 -->
+      <div class="swiper-slide">
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (1/3)</h1>
+        <div class="survey-buttons">
+          <button onclick="selectAnswer1('편리함')">편리함</button>
+          <button onclick="selectAnswer1('친환경성')">친환경성</button>
+          <button onclick="selectAnswer1('가격')">가격</button>
+        </div>
+      </div>
+      <!-- 설문조사 2 -->
+      <div class="swiper-slide">
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (2/3)</h1>
+        <div class="survey-buttons">
+          <button onclick="selectAnswer2('편리함')">편리함</button>
+          <button onclick="selectAnswer2('친환경성')">친환경성</button>
+          <button onclick="selectAnswer2('가격')">가격</button>
+        </div>
+      </div>
+      <!-- 설문조사 3 -->
+      <div class="swiper-slide">
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (3/3)</h1>
+        <div class="survey-buttons">
+          <button onclick="selectAnswer3('편리함')">편리함</button>
+          <button onclick="selectAnswer3('포이컵')">포이컵</button>
+          <button onclick="selectAnswer3('벨')">벨</button>
+        </div>
+      </div>
+      <!-- 로딩 화면 -->
+      <div class="swiper-slide" id="loading-screen">
+        <div class="loading-icon"></div>
+        <p>고객님에게 딱 맞는 제품을 추천해드리기 위해 분석 중입니다...</p>
+      </div>
+      <!-- 최종 추천 제품 화면 -->
+      <div class="swiper-slide" id="product-recommendation-screen">
+          <h1>고객님께 추천드리는 제품은?</h1>
+          <img id="recommended-product-image" src="" alt="추천 제품 이미지" class="product-image">
+          <div class="recommendation-button-container">
+            <button class="recommendation-button" onclick="window.location.href='https://oiisa.com/product/%EC%98%A4%EC%9D%B4%EC%82%AC-%ED%8F%AC%EC%9D%B4%EC%BB%B5-%EC%B0%A8%EC%84%B8%EB%8C%80-%EC%83%9D%EB%A6%AC%EC%BB%B5-%EC%83%9D%EB%A6%AC%EB%94%94%EC%8A%A4%ED%81%AC-%EA%B7%B9%EA%B0%95%EC%9D%98-%EC%B0%A9%EC%9A%A9%EA%B0%90/11/category/1/display/2/'">
+              오이사 공식몰
+            </button>
+            <button class="recommendation-button" onclick="window.location.href='https://smartstore.naver.com/deweylabs/products/6259954641'">
+              오이사 스마트스토어
+            </button>
+  </div>
+</div>
+      <!-- 백엔드에서 오는 응답을 출력할 요소 -->
+  <div id="response">Loading...</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper('.swiper-container', {
+        direction: 'horizontal', 
+        slidesPerView: 1, 
+        spaceBetween: 0, 
+        loop: false,
+        allowTouchMove: true, 
+        noSwipingClass: 'swiper-no-swiping',
+        centeredSlides: true, 
+        on: {
+          slideChangeTransitionEnd: function() {
+            swiper.update();
+          }
+        }
+      });
+
+      let answer1 = '';
+      let answer2 = '';
+      let answer3 = '';
+
+      // 설문 답변 저장
+      function selectAnswer1(answer) {
+        answer1 = answer;
+        nextSlide();
+      }
+
+      function selectAnswer2(answer) {
+        answer2 = answer;
+        nextSlide();
+      }
+
+      function selectAnswer3(answer) {
+        answer3 = answer;
+        showLoadingScreen();  // 로딩 화면으로 이동
+      }
+
+      // 최종 결과 도출 함수
+      function showProductRecommendation() {
+        let recommendedProductImage = '';
+
+        // 두 가지 결과에 따라 다른 이미지 출력
+        if (answer3 === '편리함' || answer3 === '포이컵') {
+          recommendedProductImage = 'https://oiisa.com/web/product/small/202405/68928d185e039a2bb0f9ab99c1db9331.png';
+        } else if (answer3 === '벨') {
+          recommendedProductImage = 'https://raw.githubusercontent.com/oiisadev/image_forder/e8151879f676e40880ae2e0fd831143c5b0c3968/assets/images/IMG_6819.JPG';  // 기존 이미지
+        }
+
+        // HTML에 이미지 출력
+        document.getElementById('recommended-product-image').src = recommendedProductImage;
+      }
+
+      // 로딩 후 추천 제품 화면으로 이동
+      function showLoadingScreen() {
+        swiper.slideNext();
+        setTimeout(() => {
+          showProductRecommendation();  // 로딩 후 제품 추천
+          swiper.slideNext();
+        }, 1500);  // 1.5초 대기 후 이동
+      }
+
+      function nextSlide() {
+        swiper.slideNext();
+      }
+
+      // 백엔드 서버에서 데이터를 받아오는 코드
+      fetch('https://onbd-backend.onrender.com/api/hello')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.message);  // 콘솔에 메시지 출력
+          document.getElementById('response').textContent = data.message;  // 화면에 메시지 출력
+        })
+        .catch(error => {
+          console.error('Error fetching data from the backend:', error);
+        });
+    });
+  </script>
+
+</body>
+</html>
+
+
