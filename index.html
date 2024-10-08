@@ -184,24 +184,29 @@
       
 /* image count slot 스타일 */
     .image-count-slot {
-      display: flex;
-      width: 393px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 50px;
       padding: 22px 175px;
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
-      flex-shrink: 0;
       background: #FFF;
+      z-index: 1000; /* 다른 요소보다 위에 표시되도록 */
     }
 
     /* Title 스타일 */
     .title-container {
       display: flex;
-      width: 393px;
-      padding: 15px 20px;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      width: 100%;
+      padding: 15px 20px;
+      margin-top: 80px; /* image-count-slot 아래에서 시작 */
+      text-align: center;
     }
 
     .title-container h1 {
@@ -221,11 +226,12 @@
     /* subtitle 스타일 */
     .subtitle-container {
       display: flex;
-      width: 393px;
-      padding: 10px 20px;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      width: 100%;
+      padding: 10px 20px;
+      margin-top: 10px; /* title-container 바로 아래에서 시작 */
+      text-align: center;
     }
       
      .subtitle-container p {
@@ -248,15 +254,23 @@
     .frame6-container {
       display: flex;
       width: 393px;
-      height: 300px;
+      height: 400px;  /* 고정된 높이 */
       padding: 10px 50px;
       justify-content: center;
       align-items: center;
       gap: 10px;
       flex-shrink: 0;
+      background-color: #f0f0f0;  /* 필요 시 확인용 배경색 */
     }      
+
       
-      
+    .empty-space {
+      width: 393%;  /* 필요한 너비로 설정, 혹은 고정된 px 값 */
+      height: 33px;  /* 고정된 여백 크기 */
+      background-color: transparent;  /* 투명한 배경 */
+      flex-shrink: 0;  /* 여백이 줄어들지 않도록 설정 */
+    }
+
           
   </style>
 </head>
@@ -296,6 +310,9 @@
               <button class="btn--buy-now" onclick="window.location.href='https://oiisa.com/'">바로 구매할래요</button>
             </div>
       </div>
+      
+          <!-- 여백 -->
+        <div class="empty-space"></div>
 
 
       
