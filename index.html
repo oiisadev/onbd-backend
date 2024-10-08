@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, sans-serif; Inter;
       margin: 0;
       padding: 0;
       display: flex;
@@ -28,6 +28,11 @@
       padding: 20px; /* 내부 여백 추가 */
       box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 설정 */
     }
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: column;  /* 세로 방향으로 슬라이드 배치 */
+      height: auto;
+    }
 
     .swiper-slide {
       display: flex;
@@ -40,15 +45,13 @@
       width: 100%; /* 슬라이드가 부모 컨테이너에 맞게 크기 조정 */
       max-width: 420px; /* 슬라이드의 최대 너비 제한 */
       margin: 0 auto; /* 슬라이드 내부 콘텐츠 중앙 정렬 */
-      min-height: 100vh; /* 슬라이드가 화면을 가득 채우도록 최소 높이 설정 */
+      min-height: auto; /* 슬라이드가 화면을 가득 채우도록 최소 높이 설정 */
     }
 
     .swiper-slide.onboarding-slide {
       width: 393px;
       height: 852px;
       background: #FFF;
-
-
 
     }
     
