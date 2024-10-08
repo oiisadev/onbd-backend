@@ -21,34 +21,20 @@
     * {  
     box-sizing: border-box;
     }
-    .swiper-container {
-      width: 100%;
-      height: 100vh; /* 높이를 자동으로 설정하여 내용에 맞게 조정 */
-      margin: 0 auto; /* 중앙 정렬 */
-      padding: 0; /* 내부 여백 추가 */
-      box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 설정 */
+
+    .container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+    .slide {
+      scroll-snap-align: center;
+      min-width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
     }
 
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px; /* 내부 패딩을 유지 */
-      box-sizing: border-box;
-      width: 100%; /* 슬라이드가 부모 컨테이너에 맞게 크기 조정 */
-      max-width: 420px; /* 슬라이드의 최대 너비 제한 */
-      margin: 0 auto; /* 슬라이드 내부 콘텐츠 중앙 정렬 */
-      min-height: auto; /* 슬라이드가 화면을 가득 채우도록 최소 높이 설정 */
-    }
-
-    .swiper-slide.onboarding-slide {
-      width: 393px;
-      height: 852px;
-      background: #FFF;
-
-    }
     
     .next-button {
       position: absolute;
@@ -283,11 +269,9 @@
 </head>
 
 <body>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <!-- 첫 번째 화면: 생리컵 설명 -->
-      <div class="swiper-slide onboarding-slide">
-        
+  <div class="container">
+    <div class="slide">
+      <!-- 첫 번째 화면: 생리컵 설명 -->        
         <div class="image-count-slot">
           <!-- 여기에 이미지나 카운트를 추가하면 됩니다 -->
           <p>Image count slot</p>
@@ -306,9 +290,6 @@
           <!-- Frame6 -->
         <div class="frame6-container">
           <img src="https://oiisa.com/web/product/medium/202405/88f1b8b2728cb5d329f381a63f160d6a.png" alt="frame6 image" class="frame6-image">
-
-
-          
         </div>
         
               <div class="button-container">
@@ -318,10 +299,12 @@
             <div class="button-container">
               <button class="btn--buy-now" onclick="window.location.href='https://oiisa.com/'">바로 구매할래요</button>
             </div>
-      </div>
-      
-          <!-- 여백 -->
+       <!-- 여백 -->
         <div class="empty-space"></div>
+      </div>
+     </div>
+      
+         
 
 
       
