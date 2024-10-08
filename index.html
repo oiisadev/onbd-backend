@@ -25,155 +25,24 @@
 
     .container {
       display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      height: 100vh;
+      flex-direction: column; /* 세로로 쌓이도록 변경 */
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
     }
 
     .slide {
-      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       width: 100vw;
       min-height: 100vh;
       background-color: #f0f0f0;
+      padding: 20px; /* 슬라이드 패딩 추가 */
     }
 
-    .next-button {
-      position: absolute;
-      bottom: 50px;
-      right: 20px;
-    }
-
-    .product-image {
-      max-width: 60%;
-      height: auto;
-      margin-top: 20px;
-      display: block;
-    }
-
-    .loading-icon {
-      margin: 20px 0;
-      border: 4px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 4px solid #3498db;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-
-    .survey-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 300px;
-    }
-
-    .survey-buttons button {
-      width: 100%;
-    }
-
-    .recommendation-button-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .recommendation-button {
-      padding: 10px 20px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .recommendation-button:hover {
-      background-color: #2980b9;
-    }
-
-    /* 버튼 컨테이너 스타일 */
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-    }
-
-    /* 버튼 1 스타일 (추천 받기) */
-    .btn--recommendation {
-      display: flex;
-      width: 353px;
-      max-width: 400px;
-      height: 53px;
-      padding: 17px 124px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-      background: var(--main1, #0E8BFF);
-      color: #FFF;
-      text-align: center;
-      font-feature-settings: 'liga' off, 'clig' off;
-      font-family: Inter, sans-serif;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 20px;
-      white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 설정 */
-    }
-
-    /* 버튼 2 스타일 (바로 구매) */
-    .btn--buy-now {
-      display: flex;
-      width: 353px;
-      height: 33px;
-      padding: 17px 124px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 10px;
-      background: #FFF;
-      color: var(--main1, #0E8BFF);
-      text-align: center;
-      font-feature-settings: 'liga' off, 'clig' off;
-      font-family: Inter;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 20px;
-      text-decoration-line: underline;
-    }
-
-    .btn--recommendation:hover {
-      background: #0C7CD4;
-    }
-
-    .btn--buy-now:hover {
-      background: #F0F0F0;
-    }
-
-    /* image count slot 스타일 */
-    .image-count-slot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 50px;
-      padding: 22px 175px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: #FFF;
-      z-index: 1000;
-    }
 
     /* Title 스타일 */
     .title-container {
@@ -251,6 +120,149 @@
       background-color: transparent;
       flex-shrink: 0;
     }
+
+
+
+    .product-image {
+      max-width: 60%;
+      height: auto;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .loading-icon {
+      margin: 20px 0;
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+   
+
+    /* 버튼 컨테이너 스타일 */
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* 버튼 1 스타일 (추천 받기) */
+    .btn--recommendation {
+      display: flex;
+      width: 353px;
+      max-width: 400px;
+      height: 53px;
+      padding: 17px 124px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      background: var(--main1, #0E8BFF);
+      color: #FFF;
+      text-align: center;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: Inter, sans-serif;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px;
+      white-space: nowrap; /* 텍스트가 한 줄로 유지되도록 설정 */
+    }
+
+    /* 버튼 2 스타일 (바로 구매) */
+    .btn--buy-now {
+      display: flex;
+      width: 353px;
+      height: 33px;
+      padding: 17px 124px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 10px;
+      background: #FFF;
+      color: var(--main1, #0E8BFF);
+      text-align: center;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: Inter;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      text-decoration-line: underline;
+    }
+
+    .btn--recommendation:hover {
+      background: #0C7CD4;
+    }
+
+    .btn--buy-now:hover {
+      background: #F0F0F0;
+    }
+ .next-button {
+      position: absolute;
+      bottom: 50px;
+      right: 20px;
+    }
+
+    .survey-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .survey-buttons button {
+      width: 100%;
+    }
+
+    .recommendation-button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .recommendation-button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .recommendation-button:hover {
+      background-color: #2980b9;
+    }
+
+    
+    /* image count slot 스타일 */
+    .image-count-slot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      padding: 22px 175px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #FFF;
+      z-index: 1000;
+    }
+
   </style>
 </head>
 
