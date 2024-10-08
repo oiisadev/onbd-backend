@@ -4,6 +4,7 @@ const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1, // 한 번에 한 슬라이드만 보이게 설정
   spaceBetween: 0, // 슬라이드 간격을 없앰
   loop: false,
+  autoHeight: true,
   allowTouchMove: true, // 터치로 스와이프 가능
   centeredSlides: true, // 슬라이드가 화면 중앙에 오도록
   on: {
