@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OIISA Onboarding Page</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
   <style>
     body {
-      font-family: 'Inter', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
@@ -16,15 +15,13 @@
       align-items: center;
       height: 100vh;
       background-color: #f5f5f5;
-    }
-
-    * {
-      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .swiper-container {
-      width: 393px;
-      height: 741px;
+      width: 100%;
+      height: 100vh;
+      max-width: 420px;
     }
 
     .swiper-slide {
@@ -32,171 +29,107 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 393px;
-      height: 741px;
       text-align: center;
-      overflow: hidden;
-      background-color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    .image-count-slot {
-      width: 100%;
-      height: 50px;
-      padding: 22px 175px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #FFF;
+    button {
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
-    .title-container {
-      width: 100%;
-      padding: 15px 20px;
-      text-align: center;
+    button:hover {
+      background-color: #2980b9;
     }
 
-    .title-container h1 {
-      width: 315px;
-      color: #1A1E27;
-      text-align: center;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 140%;
+    .next-button {
+      position: absolute;
+      bottom: 50px;
+      right: 20px;
     }
 
-    .subtitle-container {
-      width: 100%;
-      padding: 10px 20px;
-      text-align: center;
+    .product-image {
+      max-width: 60%;
+      height: auto;
+      margin-top: 20px;
+      display: block;
     }
 
-    .subtitle-container p {
-      width: 315px;
-      color: #505866;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 130%;
+    .loading-icon {
+      margin: 20px 0;
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
     }
 
-    .frame6-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 393px;
-      height: 280px;
-      padding: 10px 50px;
-      background-color: #f0f0f0;
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
 
-    .frame6-image {
-      width: 280px;
-      height: 280px;
-      object-fit: contain;
-    }
-
-    .button-container {
+    .survey-buttons {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      gap: 15px;
       width: 100%;
+      max-width: 300px;
+    }
+
+    .survey-buttons button {
+      width: 100%;
+    }
+
+    .recommendation-button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       margin-top: 20px;
     }
 
-    .btn--recommendation,
-    .btn--buy-now {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 353px;
-      padding: 17px 124px;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 20px;
+    .recommendation-button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
       cursor: pointer;
     }
 
-    .btn--recommendation {
-      background: #0E8BFF;
-      color: white;
+    .recommendation-button:hover {
+      background-color: #2980b9;
     }
-
-    .btn--recommendation:hover {
-      background: #0C7CD4;
-    }
-
-    .btn--buy-now {
-      background: white;
-      color: #0E8BFF;
-      text-decoration: underline;
-    }
-
-    .btn--buy-now:hover {
-      background: #F0F0F0;
-    }
-
-    .empty-space {
-      width: 100%;
-      height: 33px;
-      background-color: transparent;
-      flex-shrink: 0;
-    }
-
   </style>
 </head>
+
 <body>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <!-- 첫 번째 화면 -->
+      <!-- 첫 번째 화면: 생리컵 설명 -->
       <div class="swiper-slide">
-        <div class="image-count-slot">
-          <p>Image count slot</p>
-        </div>
-
-        <div class="title-container">
-          <h1>생리컵과 함께하는 완전히 새로운 월경생활</h1>
-        </div>
-
-        <div class="subtitle-container">
-          <p>생리컵 전문! 오이사가 모든 걸 알려드릴게요</p>
-        </div>
-
-        <div class="frame6-container">
-          <img src="https://oiisa.com/web/product/medium/202405/88f1b8b2728cb5d329f381a63f160d6a.png" alt="frame6 image" class="frame6-image">
-        </div>
-
-        <div class="button-container">
-          <button class="btn--recommendation" onclick="goToSurveyPage()">나에게 맞는 생리컵 추천받기</button>
-          <button class="btn--buy-now" onclick="window.location.href='https://oiisa.com/'">바로 구매할래요</button>
-        </div>
-
-        <div class="empty-space"></div>
+        <h1>생리컵이란 무엇인가요?</h1>
+        <p>생리컵은 편리하고 친환경적인 생리 용품입니다.</p>
+        <button class="next-button" onclick="nextSlide()">다음 페이지</button>
       </div>
-      <!-- 두 번째 슬라이드 추가 예시 -->
+      <!-- 두 번째 화면: 고객 후기 -->
       <div class="swiper-slide">
-        <div class="title-container">
-          <h1>두 번째 슬라이드</h1>
-        </div>
+        <h1>사용 전후 변화</h1>
+        <p>"처음엔 걱정했지만 지금은 너무 만족해요!"</p>
+        <button class="next-button" onclick="nextSlide()">다음 페이지</button>
       </div>
-    </div>
-  </div>
-
-      <!-- 세 번째 슬라이드 -->
-      <div class="swiper-slide">
-        <h1>세 번째 화면</h1>
-        <p>이곳에 다른 화면 내용을 추가하세요.</p>
-      </div>
-    </div>
-  </div>
-
-
-      
       <!-- 설문조사 1 -->
       <div class="swiper-slide">
-        <h1>생리컵은 처음인데... 나에게 맞는 생리컵은 뭘까? (1/3)</h1>
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (1/3)</h1>
         <div class="survey-buttons">
           <button onclick="selectAnswer1('편리함')">편리함</button>
           <button onclick="selectAnswer1('친환경성')">친환경성</button>
@@ -205,46 +138,22 @@
       </div>
       <!-- 설문조사 2 -->
       <div class="swiper-slide">
-        <h1>내 질에 대해 얼마나 알고있나요? (2/3)</h1>
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (2/3)</h1>
         <div class="survey-buttons">
           <button onclick="selectAnswer2('편리함')">편리함</button>
           <button onclick="selectAnswer2('친환경성')">친환경성</button>
           <button onclick="selectAnswer2('가격')">가격</button>
         </div>
       </div>
-      
       <!-- 설문조사 3 -->
       <div class="swiper-slide">
-        <h1>내가 생리할 때 불편한 건... (2/3)</h1>
-        <div class="survey-buttons">
-          <button onclick="selectAnswer2('편리함')">편리함</button>
-          <button onclick="selectAnswer2('친환경성')">친환경성</button>
-          <button onclick="selectAnswer2('가격')">가격</button>
-        </div>
-      </div>
-
-      <!-- 설문조사 4 -->
-            <div class="swiper-slide">
-              <h1>내가 생리컵에 대해 기대하는건 (2/3)</h1>
-              <div class="survey-buttons">
-                <button onclick="selectAnswer2('편리함')">편리함</button>
-                <button onclick="selectAnswer2('친환경성')">친환경성</button>
-                <button onclick="selectAnswer2('가격')">가격</button>
-              </div>
-            </div>
-
-
-      
-      <!-- 설문조사 5 -->
-      <div class="swiper-slide">
-        <h1>질문 뭐 넣어야지 끄아아 (3/3)</h1>
+        <h1>생리컵에서 가장 중요하게 생각하는 요소는? (3/3)</h1>
         <div class="survey-buttons">
           <button onclick="selectAnswer3('편리함')">편리함</button>
           <button onclick="selectAnswer3('포이컵')">포이컵</button>
           <button onclick="selectAnswer3('벨')">벨</button>
         </div>
       </div>
-      
       <!-- 로딩 화면 -->
       <div class="swiper-slide" id="loading-screen">
         <div class="loading-icon"></div>
@@ -269,7 +178,6 @@
         <h1>백엔드 점검</h1>
         <h2>Loading...</h2>
       </div>
-
       
     </div>
   </div>
