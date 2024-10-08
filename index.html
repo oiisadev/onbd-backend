@@ -17,11 +17,12 @@
       background-color: #f5f5f5;
       overflow: hidden;
     }
-
+    * {  
+    box-sizing: border-box;
+    }
     .swiper-container {
       max-width: 420px; /* 컨테이너의 최대 너비 제한 */
       width: 100%;
-      max-width: 420px; /* 최대 너비 제한 */
       height: auto; /* 높이를 자동으로 설정하여 내용에 맞게 조정 */
       margin: 0 auto; /* 중앙 정렬 */
       padding: 20px; /* 내부 여백 추가 */
@@ -42,7 +43,7 @@
       min-height: 100vh; /* 슬라이드가 화면을 가득 채우도록 최소 높이 설정 */
     }
 
-    .swiper-slide onboarding-slide {
+    .swiper-slide.onboarding-slide {
       width: 393px;
       height: 852px;
       background: #FFF;
@@ -265,7 +266,7 @@
 
       
     .empty-space {
-      width: 393%;  /* 필요한 너비로 설정, 혹은 고정된 px 값 */
+      width: 393px;  /* 필요한 너비로 설정, 혹은 고정된 px 값 */
       height: 33px;  /* 고정된 여백 크기 */
       background-color: transparent;  /* 투명한 배경 */
       flex-shrink: 0;  /* 여백이 줄어들지 않도록 설정 */
