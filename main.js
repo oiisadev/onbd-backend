@@ -18,6 +18,12 @@ let answer1 = '';
 let answer2 = '';
 let answer3 = '';
 
+function goToSurveyPage() {
+  // 첫 번째 설문 페이지로 슬라이드 이동 (설문조사 1 페이지가 3번째 슬라이드라 가정)
+  swiper.slideTo(2); // 슬라이드 인덱스는 0부터 시작하므로 3번째 슬라이드는 인덱스 2입니다.
+}
+
+
 // 설문 답변 저장 및 슬라이드 이동 함수
 function selectAnswer1(answer) {
   answer1 = answer;
