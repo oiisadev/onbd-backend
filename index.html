@@ -19,9 +19,12 @@
     }
 
     .swiper-container {
+      max-width: 420px; /* 컨테이너의 최대 너비 제한 */
       width: 100%;
-      height: 100vh;
-      max-width: 420px;
+      height: auto; /* 높이를 자동으로 설정하여 내용에 맞게 조정 */
+      margin: 0 auto; /* 중앙 정렬 */
+      padding: 20px; /* 내부 여백 추가 */
+      box-sizing: border-box; /* 패딩이 전체 너비에 포함되도록 설정 */
     }
 
     .swiper-slide {
@@ -30,8 +33,11 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 20px; /* 내부 패딩을 유지 */
       box-sizing: border-box;
+      max-width: 420px; /* 슬라이드의 최대 너비 제한 */
+      margin: 0 auto; /* 슬라이드 내부 콘텐츠 중앙 정렬 */
+      min-height: 100vh; /* 슬라이드가 화면을 가득 채우도록 최소 높이 설정 */
     }
 
     .swiper-slide onboarding-slide {
@@ -119,12 +125,27 @@
       background-color: #2980b9;
     }
 
-        .button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
+    .button-container button {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+        /* 버튼 1 스타일 (추천 받기) */
+    .btn--recommendation {
+      background-color: #0E8BFF;
+      color: white;
+      border: none;
+    }
+
+    /* 버튼 2 스타일 (바로 구매) */
+    .btn--buy-now {
+      background-color: #FFF;
+      color: #000;
+      border: 2px solid #0E8BFF;
+    }
       
           /* 공통 Frame 스타일 */
     .frame {
@@ -137,39 +158,13 @@
       gap: 10px;
     }
     
-    /* 버튼 1 스타일 (Frame3에 포함) */
-    .btn--recommendation {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 15px;
-      border-radius: 10px;
-      background: #0E8BFF;
-      color: white;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-    }
+    
     
     .btn--recommendation:hover {
       background: #0C7CD4; /* 호버 시 색상 변경 */
     }
     
-    /* 버튼 2 스타일 (Frame4에 포함) */
-    .btn--buy-now {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 15px;
-      border-radius: 10px;
-      background: #FFF;
-      color: #000;
-      border: 2px solid #0E8BFF;
-      font-size: 16px;
-      cursor: pointer;
-    }
+  
     
     .btn--buy-now:hover {
       background: #F0F0F0; /* 호버 시 색상 변경 */
