@@ -260,7 +260,12 @@
       flex-shrink: 0;
       background-color: #f0f0f0;  /* 필요 시 확인용 배경색 */
     }      
-
+    .frame6-image {
+      max-width: 100%;  /* 이미지의 너비를 컨테이너에 맞춤 */
+      height: auto;     /* 비율에 맞게 이미지 높이 자동 조정 */
+      object-fit: cover; /* 이미지가 컨테이너에 맞게 비율을 유지하며 크기 조정 */
+    }
+      
       
     .empty-space {
       width: 393px;  /* 필요한 너비로 설정, 혹은 고정된 px 값 */
@@ -296,8 +301,10 @@
         
           <!-- Frame6 -->
         <div class="frame6-container">
-          <!-- 여기에 콘텐츠 추가 -->
-          <p>Frame6 content here</p>
+          <img src="https://oiisa.com/web/product/medium/202405/88f1b8b2728cb5d329f381a63f160d6a.png" alt="frame6 image" class="frame6-image">
+
+
+          
         </div>
         
               <div class="button-container">
