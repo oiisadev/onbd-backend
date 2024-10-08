@@ -262,9 +262,11 @@
       background-color: #f0f0f0;  /* 필요 시 확인용 배경색 */
     }      
     .frame6-image {
-      max-width: 100%;  /* 이미지의 너비를 컨테이너에 맞춤 */
-      height: auto;     /* 비율에 맞게 이미지 높이 자동 조정 */
-      object-fit: cover; /* 이미지가 컨테이너에 맞게 비율을 유지하며 크기 조정 */
+      width: 280px;
+      height: 280px;
+      object-fit: contain; /* 이미지가 잘리지 않고, 전체가 표시되도록 */
+      margin-top: 20px;
+      display: block;
     }
       
       
