@@ -50,11 +50,19 @@
       background-color: #2980b9;
     }
 
-    .next-button {
+     .next-button {
       position: absolute;
       bottom: 50px;
       right: 20px;
+      width: 353px;
+      height: 53px;
+      padding: 17px 124px;
+      display: flex;  /* Flexbox 속성 추가 */
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
+
 
     .product-image {
       max-width: 60%;
@@ -119,7 +127,7 @@
       <div class="swiper-slide">
         <h1>생리컵이란 무엇인가요?</h1>
         <p>생리컵은 편리하고 친환경적인 생리 용품입니다.</p>
-        <button class="next-button" onclick="nextSlide()">다음 페이지</button>
+        <button class="next-button" onclick="nextSlide()">나에게 맞는 생리컵 추천받기</button>
       </div>
       <!-- 두 번째 화면: 고객 후기 -->
       <div class="swiper-slide">
