@@ -26,8 +26,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            position: relative;
-            overflow: hidden;
+            position: fixed; /* 페이지 상단에 고정 */
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto; /* 가운데 정렬 */
+            z-index: 1000; /* 다른 요소보다 위에 위치 */
+            overflow: hidden; /* 스크롤이 발생하지 않도록 설정 */
         }
         .swiper-container {
             width: 100%;
@@ -51,6 +56,13 @@
             justify-content: center;
             padding: 20px;
             box-sizing: border-box;
+            position: fixed; /* 화면에 고정 */
+            top: 0; /* 페이지 최상단에 위치 */
+            left: 0; /* 왼쪽에 맞추기 */
+            right: 0; /* 페이지 전체 너비를 사용 */
+            margin: 0 auto; /* 가운데 정렬 */
+            z-index: 1000; /* 다른 요소들보다 위에 위치 */           
+
         }
         .image-count-slot {
             display: flex;
@@ -163,6 +175,7 @@
             line-height: 20px; /* 133.333% */
             text-align: center;
             text-decoration-line: underline;
+            white-space: nowrap;
         }
         .btn-buynow:hover {
             color: #B1B8C0;
@@ -170,6 +183,174 @@
         button:hover {
             background-color: #0056b3;
         }
+        .navigator {
+        display: flex;
+        width: 393px; /* 너비 393px */
+        height: 50px; /* 높이 50px */
+        padding: 14px 142px; /* 위아래 14px, 좌우 142px의 여백 */
+        flex-direction: row; /* 버튼을 가로로 배치 */
+        align-items: center; /* 세로 가운데 정렬 */
+        gap: 10px; /* 버튼들 간의 간격 */
+        flex-shrink: 0; /* 크기를 고정 */
+        background-color: #FFF; /* 네비게이션바 배경색 */
+        position: fixed; /* 페이지 최상단에 고정 */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* 다른 요소 위에 위치 */
+        }
+
+        .back-button {
+        position: absolute;
+        display: flex;
+        align-items: center; /* 세로 가운데 정렬 */
+        left: 0; /* 왼쪽에 붙이기 */
+        padding-left: 20px; /* 좌측 약간의 여백 */
+        }
+
+        .home-button {
+        position: absolute; /* 화면 가운데에 정확히 위치시키기 위해 absolute 사용 */
+        left: 30%; /* 가운데 배치 */
+        transform: translateX(-50%); /* 가운데 정렬 */
+        }
+
+
+        a {
+        text-decoration: none; /* 링크 밑줄 제거 */
+        }
+        
+        .progress-bar {
+        width: 98px; /* 전체 상태바의 너비 */
+        height: 5px; /* 상태바의 높이 */
+        background-color: #FFF; /* 상태바의 배경색 (빈 부분) */
+        flex-shrink: 0; /* 크기 축소 방지 */
+        position: relative; /* 내부 요소가 절대 위치로 배치되도록 설정 */
+        overflow: hidden; /* 채워지는 부분이 상태바 밖으로 나가지 않도록 */
+        }
+
+        .progress-fill {
+        width: 50%; /* 진행 상황에 맞게 채워질 너비 (동적으로 변경 가능) */
+        height: 100%; /* 상태바의 높이만큼 채움 */
+        background-color: var(--main1, #0E8BFF); /* 채워지는 부분의 색상 */
+        transition: width 0.5s ease; /* 부드럽게 너비가 변경되도록 애니메이션 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .count-page {
+        display: flex;
+        width: 393px;
+        height: 50px;
+        padding: 14px 142px;
+        flex-direction: column;
+        align-items: center; /* 텍스트 중앙 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
+        background-color: #FFF;
+        gap: 10px;
+        flex-shrink: 0;
+        position: fixed;
+        top: 50px;
+        }
+
+        .page-number {
+        color: var(--text1, #1A1E27);
+        text-align: center; /* 텍스트 중앙 정렬 */
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%; /* 20.8px */
+        width: 100%; /* 부모 컨테이너 너비 전체 사용 */
+        }
+
+
+        .question {
+        display: inline-flex;
+        padding: 15px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        top: 116px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #FFF;
+        z-index: 998;
+        
+        }
+
+        .question-text {
+        width: 315px;
+        color: var(--text1, #1A1E27);
+        text-align: center;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+        }
+        
+        .survey-image {
+        display: flex;
+        height: 241px;
+        padding: 10px 50px 25px 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: #FFF;
+        margin-top: 172px; /* 이미지와의 간격 추가 */
+
+
+        }
+
+        .survey-image img {
+        max-width: 100%; /* 이미지가 컨테이너 안에 맞도록 설정 */
+        width: 180px;
+        height: 180px;
+        }
+
+
+        .survey-box {
+        display: flex;
+        width: 393px;
+        padding: 10px 20px;
+        flex-direction: column; /* 세로로 나란히 배치 */
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* 박스 사이의 간격 */
+        
+        }
+
+        .answer-box {
+        width: 80%; /* 박스가 전체 너비를 차지하도록 설정 */
+        padding: 10px 20px;
+        color: var(--sub1, #64768C);
+        text-align: center;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 133.333% */
+        border-radius: 10px;
+        border: 1px solid var(--sub1, #64768C);
+        background: #FFF;
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -200,15 +381,147 @@
                         <div class="image-onbd"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Outside%20House%20Background.png?raw=true"></div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+                <div class="swiper-slide">
+                    <div class="onbd-container">
+                        <div class="navigator">
+                            <a href="#" class="back-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/back-icon.png?raw=true" alt="뒤로가기" />
+                              </a>
+                              <a href="#" class="home-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/home-icon.png?raw=true" alt="홈" />
+                              </a>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                          </div>
+                        <div class="count-page">
+                            <div class="page-number">1 / 4</div>
+                        </div>
+                        <div class="question">
+                            <div class="question-text">내 질에 대해 얼마나 알고 있나요?</div>
+                        </div>
+                        <div class="survey-image">
+                            <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
+                          </div>
+                        <div class="survey-box">
+                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
+                            <div class="answer-box">두 번째 질문에 대한 답변</div>
+                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="onbd-container">
+                        <div class="navigator">
+                            <a href="#" class="back-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/back-icon.png?raw=true" alt="뒤로가기" />
+                              </a>
+                              <a href="#" class="home-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/home-icon.png?raw=true" alt="홈" />
+                              </a>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                          </div>
+                        <div class="count-page">
+                            <div class="page-number">2 / 4</div>
+                        </div>
+                        <div class="question">
+                            <div class="question-text">생리할 때 가장 불편한 건?</div>
+                        </div>
+                        <div class="survey-image">
+                            <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
+                          </div>
+                        <div class="survey-box">
+                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
+                            <div class="answer-box">두 번째 질문에 대한 답변</div>
+                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="onbd-container">
+                        <div class="navigator">
+                            <a href="#" class="back-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/back-icon.png?raw=true" alt="뒤로가기" />
+                              </a>
+                              <a href="#" class="home-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/home-icon.png?raw=true" alt="홈" />
+                              </a>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                          </div>
+                        <div class="count-page">
+                            <div class="page-number">3 / 4</div>
+                        </div>
+                        <div class="question">
+                            <div class="question-text">생리컵에 가장 기대하는 것은</div>
+                        </div>
+                        <div class="survey-image">
+                            <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
+                          </div>
+                        <div class="survey-box">
+                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
+                            <div class="answer-box">두 번째 질문에 대한 답변</div>
+                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="onbd-container">
+                        <div class="navigator">
+                            <a href="#" class="back-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/back-icon.png?raw=true" alt="뒤로가기" />
+                              </a>
+                              <a href="#" class="home-button">
+                                <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/home-icon.png?raw=true" alt="홈" />
+                              </a>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                          </div>
+                        <div class="count-page">
+                            <div class="page-number">4 / 4</div>
+                        </div>
+                        <div class="question">
+                            <div class="question-text">질문 짜야지..뭐넣지? 으아아ㅏ</div>
+                        </div>
+                        <div class="survey-image">
+                            <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
+                          </div>
+                        <div class="survey-box">
+                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
+                            <div class="answer-box">두 번째 질문에 대한 답변</div>
+                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
             </div>
         </div>
-      
         <div class="btn-recommendation-container">
             <button class="btn-recommendation" onclick="window.location.href='#'">나에게 맞는 생리컵 추천받기</button>
         </div>
         <div class="btn-buynow-container">
             <button class="btn-buynow" onclick="window.location.href='https://oiisa.com/'">바로 구매할래요</button>
         </div>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
@@ -224,6 +537,26 @@
                 prevEl: '.swiper-button-prev',
             },
         });
+
+                // 진행 상황을 업데이트하는 함수
+        function updateProgressBarFromCountPage() {
+        const countPageText = document.querySelector('.page-number').innerText; // "1 / 4" 형식의 텍스트 가져옴
+        const [current, total] = countPageText.split('/').map(Number); // 현재 페이지와 총 페이지를 숫자로 변환
+        
+        // 진행률 계산
+        const progress = (current / total) * 100;
+        
+        // 상태바 업데이트
+        const progressBarFill = document.querySelector('.progress-fill');
+        progressBarFill.style.width = progress + '%'; // 상태바의 너비를 업데이트
+        }
+
+        // 페이지가 로드되면 상태바를 업데이트
+        updateProgressBarFromCountPage();
+
+
+
+
     </script>
 </body>
 </html>
