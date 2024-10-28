@@ -57,14 +57,37 @@
 
 
         }
-        .onbd-container {
+
+        .intro-container {
             width: 393px;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: fixed; /* 화면에 고정 */
+            top: 0; /* 페이지 최상단에 위치 */
+            left: 0; /* 왼쪽에 맞추기 */
+            right: 0; /* 페이지 전체 너비를 사용 */
+            margin: 0 auto; /* 가운데 정렬 */
+            z-index: 1000; /* 다른 요소들보다 위에 위치 */
+         
+
+        }
+
+
+
+
+        .onbd-container {
+            width: 393px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
             box-sizing: border-box;
             position: fixed; /* 화면에 고정 */
             top: 0; /* 페이지 최상단에 위치 */
@@ -118,14 +141,22 @@
         }
         .image-onbd {
             display: flex;
-            width: 393px;
-            height: 300px;
+            width: 230px;
+            height: 230px;
             padding: 10px 50px;
             justify-content: center;
             align-items: center;
             gap: 10px;
             flex-shrink: 0;
+            overflow: hidden;
         }
+
+        .image-onbd img {
+            width: 100%; /* 컨테이너 너비에 맞게 조정 */
+            height: 100%; /* 이미지 비율 유지 */
+            object-fit: cover; /* 이미지가 컨테이너에 맞게 조정되도록 설정 */
+        }
+
         .btn-recommendation-container, .btn-buynow-container {
             display: flex;
             width: 393px;
@@ -135,19 +166,15 @@
             align-items: center;
             gap: 10px;
             position: absolute;
-            bottom: 85px;
+            bottom: 160px;
             transition: transform 0.5s ease, opacity 0.5s ease;
 
             transform: translateY(100%); /* 화면 아래로 숨기기 */
             opacity: 0; /* 투명하게 설정 */
 
-
-
-
-
         }
         .btn-buynow-container {
-            bottom: 40px;
+            bottom: 120px;
         }
         .btn-recommendation {
             display: flex;
@@ -592,7 +619,7 @@
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                    <div class="onbd-container">
+                    <div class="intro-container">
                         <div class="title"><strong>생리컵</strong>과 함께하는<br><strong>완전히 새로운 월경생활</strong></div>
                         <div class="subtitle">생리컵 전문! <br>오이사가 모든 걸 알려드릴게요</div>
                         <div class="image-onbd"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Outside%20House%20Background.png?raw=true"></div>
@@ -636,8 +663,7 @@
                                 <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/home-icon.png?raw=true" alt="홈" />
                               </a>
                         </div>
-                    
-                    <div class="empty-space-container"></div>
+
 
                     <div class="survey-main-image">
                         <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
@@ -657,9 +683,6 @@
                         </div>
                       </div>
 
-                      <div class="temp-image-container">
-                        <img class="temp-image" src="https://github.com/oiisadev/onbd-backend/blob/main/image/Group%203.png?raw=true" alt="임시 이미지">
-                      </div>
                       
                       
                         
@@ -792,9 +815,11 @@
                 <div class="swiper-slide">
                     <div class="survey-container">
                         <div class="spinner"></div>
-                        <div class="loading-screen">
-                            <p>분석 중입니다... <br> 나에게 맞는 제품을 추천해 드리기 위해 선호도를 분석 중입니다.</p>
+                        <div class="title">분석 중입니다...</div>
+                        <div class="subtitle">나에게 맞는 제품을 추천해 드리기 위해 선호도를 분석 중입니다</div>
                         </div>
+                        
+
 
                     </div>
                 </div> 
