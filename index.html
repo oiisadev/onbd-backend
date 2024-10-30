@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -47,10 +47,11 @@
         .swiper-slide {
             width: 100%;
             height: 582px;
-            display: flex;
+            display: inline-flex;
             align-items: flex-start;
             justify-content: center;
             padding: 0;
+            position: relative;
             
 
 
@@ -614,6 +615,29 @@
         }
 
 
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .result-content {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #505866;
+        }
+
+
+
 
 
 
@@ -632,7 +656,7 @@
                     </div>
                 </div>
 
-                <div class="swiper-slide">
+                <div class="swiper-slide show-buttons">
                     <div class="onbd-container">
                         <div class="image-count-slot"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/image%20count%20slot_1.png?raw=true" alt="이미지 설명 1" style="width: 100%; height: auto;"></div>
                         <div class="title">여러번 교체할 필요없이<br><strong>하루 두번, 간편하게</strong></div>
@@ -640,7 +664,7 @@
                         <div class="image-onbd"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Outside%20House%20Background.png?raw=true"></div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide show-buttons">
                     <div class="onbd-container">
                         <div class="image-count-slot"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/image%20count%20slot_2.png?raw=true" alt="이미지 설명 2" style="width: 100%; height: auto;"></div>
                         <div class="title">더욱 쉬워진 사용법<br><strong>아무것도 몰라도 괜찮아요</strong></div>
@@ -648,7 +672,7 @@
                         <div class="image-onbd"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Outside%20House%20Background.png?raw=true"></div>
                     </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide show-buttons">
                     <div class="onbd-container">
                         <div class="image-count-slot"><img src="https://github.com/oiisadev/onbd-backend/blob/main/image/image%20count%20slot_3.png?raw=true" alt="이미지 설명 3" style="width: 100%; height: auto;"></div>
                         <div class="title">매달 구매? <br><strong>2년에 한번이면 충분해요</strong></div>
@@ -715,15 +739,15 @@
                             <div class="page-number">1 / 4</div>
                         </div>
                         <div class="question">
-                            <div class="question-text">내 질에 대해 얼마나 알고 있나요?</div>
+                            <div class="question-text">생리컵을 사용해본 적 있나요?</div>
                         </div>
                         <div class="survey-image">
                             <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
                           </div>
                         <div class="survey-box">
-                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
-                            <div class="answer-box">두 번째 질문에 대한 답변</div>
-                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                            <div class="answer-box">처음이에요</div>
+                            <div class="answer-box">써봤는데 실패했어요</div>
+                            <div class="answer-box">생리컵을 사용하고 있어요</div>
                         </div>
                     </div>
                 </div>
@@ -745,15 +769,15 @@
                             <div class="page-number">2 / 4</div>
                         </div>
                         <div class="question">
-                            <div class="question-text">생리할 때 가장 불편한 건?</div>
+                            <div class="question-text">본인의 질 길이를 알고있나요?</div>
                         </div>
                         <div class="survey-image">
                             <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
                           </div>
                         <div class="survey-box">
-                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
-                            <div class="answer-box">두 번째 질문에 대한 답변</div>
-                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                            <div class="answer-box">모르겠어요</div>
+                            <div class="answer-box">짧은 편이에요</div>
+                            <div class="answer-box">긴 편이에요</div>
                         </div>
                     </div>
                 </div>
@@ -775,15 +799,15 @@
                             <div class="page-number">3 / 4</div>
                         </div>
                         <div class="question">
-                            <div class="question-text">생리컵에 가장 기대하는 것은</div>
+                            <div class="question-text">평소 1-2일차 생리양이 얼마나 되나요</div>
                         </div>
                         <div class="survey-image">
                             <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
                           </div>
                         <div class="survey-box">
-                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
-                            <div class="answer-box">두 번째 질문에 대한 답변</div>
-                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                            <div class="answer-box">생리대를 거의 1-2시간마다 교체해요</div>
+                            <div class="answer-box">잘 모르겠어요</div>
+                            <div class="answer-box">적은 편이에요</div>
                         </div>
                     </div>
                 </div>
@@ -805,49 +829,68 @@
                             <div class="page-number">4 / 4</div>
                         </div>
                         <div class="question">
-                            <div class="question-text">질문 짜야지..뭐넣지? 으아아ㅏ</div>
+                            <div class="question-text">생리컵에 어떤걸 가장 기대하나요?</div>
                         </div>
                         <div class="survey-image">
                             <img src="https://github.com/oiisadev/onbd-backend/blob/main/image/Wavy%20Buddies%20Avatar.png?raw=true" alt="이미지1">
                           </div>
                         <div class="survey-box">
-                            <div class="answer-box">첫 번째 질문에 대한 답변</div>
-                            <div class="answer-box">두 번째 질문에 대한 답변</div>
-                            <div class="answer-box">세 번째 질문에 대한 답변</div>
+                            <div class="answer-box">생리 안하는 느낌</div>
+                            <div class="answer-box">적은 교체 횟수</div>
+                            <div class="answer-box">압박감 없는 편안함</div>
                         </div>
                     </div>
                 </div>
+
+
+
+                
+
 
                 <div class="swiper-slide">
                     <div class="survey-container">
                         <div class="spinner"></div>
                         <div class="title">분석 중입니다...</div>
                         <div class="subtitle">나에게 맞는 제품을 추천해 드리기 위해 선호도를 분석 중입니다</div>
-                        </div>
                         
 
-
                     </div>
-            </div> 
-       
-
+                </div>    
                 
+                <div class="swiper-slide">
+                  <div class="survey-container">
+                      <div class="title">추천결과</div>
+                      <div class="result-content"></div>
+                      <div class="subtitle">오이사가 이 제품을 추천드려요</div>
+                      
+
+                  </div>
+              </div>  
+
+
+
+              </div>
+              <!--warper-->
+
+
+
+            </div>         
         </div>
-    </div>
+    
 
         
    
 
 
         <div class="btn-recommendation-container">
-            <button class="btn-recommendation" onclick="window.location.href='#'">나에게 맞는 생리컵 추천받기</button>
+            <button class="btn-recommendation" onclick="goToSurveyStart()">나에게 맞는 생리컵 추천받기</button>
         </div>
         <div class="btn-buynow-container">
             <button class="btn-buynow" onclick="window.location.href='https://oiisa.com/'">바로 구매할래요</button>
         </div>
         
         
-    </div>
+    
 
 
 
@@ -857,90 +900,161 @@
 
 
 
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            direction: 'horizontal',
-            loop: false,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            on: {
-        init: function () {
-            // 초기 로드 시 1페이지에서는 버튼 숨기기
-            var btnRecommendation = document.querySelector('.btn-recommendation-container');
-            var btnBuyNow = document.querySelector('.btn-buynow-container');
-            btnRecommendation.style.transform = 'translateY(100%)';
-            btnRecommendation.style.opacity = '0';
-            btnBuyNow.style.transform = 'translateY(100%)';
-            btnBuyNow.style.opacity = '0';
-        },
-        slideChange: function () {
-            // 현재 슬라이드의 인덱스 확인
-            var currentSlide = swiper.activeIndex;
-            var btnRecommendation = document.querySelector('.btn-recommendation-container');
-            var btnBuyNow = document.querySelector('.btn-buynow-container');
-
-            // 2~4번째 슬라이드에서만 버튼을 표시하고, 나머지 슬라이드에서는 숨김
-            if (currentSlide >= 1 && currentSlide <= 3) { // 슬라이드 인덱스 1, 2, 3 (2~4번째 슬라이드)
-                btnRecommendation.style.transform = 'translateY(0)';
-                btnRecommendation.style.opacity = '1';
-                btnBuyNow.style.transform = 'translateY(0)';
-                btnBuyNow.style.opacity = '1';
-            } else {
-                btnRecommendation.style.transform = 'translateY(100%)';
-                btnRecommendation.style.opacity = '0';
-                btnBuyNow.style.transform = 'translateY(100%)';
-                btnBuyNow.style.opacity = '0';
+            // 슬라이드 직접 이동 함수
+            function goToNextPage() {
+                swiper.slideNext(); // 다음 슬라이드로 이동
             }
-        }
-    }
-});
-
-                // 진행 상황을 업데이트하는 함수
-        function updateProgressBarFromCountPage() {
-        const countPageText = document.querySelector('.page-number').innerText; // "1 / 4" 형식의 텍스트 가져옴
-        const [current, total] = countPageText.split('/').map(Number); // 현재 페이지와 총 페이지를 숫자로 변환
         
-        // 진행률 계산
-        const progress = (current / total) * 100;
-        
-        // 상태바 업데이트
-        const progressBarFill = document.querySelector('.progress-fill');
-        progressBarFill.style.width = progress + '%'; // 상태바의 너비를 업데이트
-        }
-
-        // 페이지가 로드되면 상태바를 업데이트
-        updateProgressBarFromCountPage();
-
-        function goToNextPage() {
-        var swiper = document.querySelector('.swiper-container').swiper;
-        swiper.slideNext(); // 다음 슬라이드로 이동
-         }
-        
-         // 모든 answer-box에 클릭 이벤트 추가
-         document.querySelectorAll('.answer-box').forEach(function(box) {
-            box.addEventListener('click', function() {
-                var swiper = document.querySelector('.swiper-container').swiper;
-                swiper.slideNext(); // 다음 페이지로 이동
+            // 각 answer-box에 클릭 이벤트 추가
+            document.querySelectorAll('.answer-box').forEach(function(box) {
+                box.addEventListener('click', function() {
+                  swiper.slideNext(); // 답변 클릭 시 다음 페이지로 이동
+                });
             });
-        });
+        
+            // back 버튼 클릭 이벤트
+            document.querySelector('.back-button').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.history.back();
+            });
+        
+            // BTN에서 설문페이지로 바로 이동
+            function goToSurveyStart() {
+              swiper.slideTo(4); // 설문 시작 슬라이드로 이동
+            };
+            
 
 
-        // back button에 클릭 이벤트 추가
-        document.querySelector('.back-button').addEventListener('click', function(event) {
-        event.preventDefault(); // 기본 링크 동작 방지
-        window.history.back();  // 이전 페이지로 이동
-        });
+            // Swiper 초기화
+            var swiper = new Swiper('.swiper-container', {
+                observeParents: true, // 부모 요소의 변화 감지
+                observer: true,       // 슬라이드 DOM 구조의 변화 감지
+                direction: 'horizontal',
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    init: function () {
+                        // 초기 로드시 버튼 숨기기 설정
+                        var btnRecommendation = document.querySelector('.btn-recommendation-container');
+                        var btnBuyNow = document.querySelector('.btn-buynow-container');
+                        btnRecommendation.style.transform = 'translateY(100%)';
+                        btnRecommendation.style.opacity = '0';
+                        btnBuyNow.style.transform = 'translateY(100%)';
+                        btnBuyNow.style.opacity = '0';
+                    },
+                    slideChange: function () {
+                        var currentSlide = swiper.slides[swiper.activeIndex];
+                        var btnRecommendation = document.querySelector('.btn-recommendation-container');
+                        var btnBuyNow = document.querySelector('.btn-buynow-container');
+        
+                        // 6-9 슬라이드에서 선택을 감지하여 점수 누적
+                        if (swiper.activeIndex >= 6 && swiper.activeIndex <= 9) {
+                            const questionIndex = swiper.activeIndex - 6;
+                            const answerBoxes = document.querySelectorAll('.swiper-slide')[swiper.activeIndex].querySelectorAll('.answer-box');
+        
+                            answerBoxes.forEach((box, answerIndex) => {
+                                box.addEventListener('click', function () {
+                                    // 선택한 답변 점수를 누적
+                              
+                                    const score = surveyData[questionIndex][answerIndex];
+                                    surveyScores.P += score.P;
+                                    surveyScores.BM += score.BM;
+                                    surveyScores.BS += score.BS;
+                                    surveyScores.BP += score.BP;
+        
+                                });
+                            });
+                        }
+        
+                        // 마지막 슬라이드에서 결과 표시
+                        if (swiper.activeIndex === 10) {
+                            displayRecommendation();
+                        }                        
+        
+                        // 분석 슬라이드로 도달 시 자동으로 다음 슬라이드로 이동
+                        if (swiper.activeIndex === 9) { // 예: 마지막 전 슬라이드 (분석)
+                            setTimeout(function () {
+                                swiper.slideNext(); // 다음 슬라이드로 이동
+                            }, 1500); // 1.5초 대기 후 이동
+                        }
+        
+                        // show-buttons 클래스에 따라 버튼 표시 설정
+                        if (currentSlide.classList.contains('show-buttons')) {
+                            btnRecommendation.style.transform = 'translateY(0)';
+                            btnRecommendation.style.opacity = '1';
+                            btnBuyNow.style.transform = 'translateY(0)';
+                            btnBuyNow.style.opacity = '1';
+                        } else {
+                            btnRecommendation.style.transform = 'translateY(100%)';
+                            btnRecommendation.style.opacity = '0';
+                            btnBuyNow.style.transform = 'translateY(100%)';
+                            btnBuyNow.style.opacity = '0';
+                        }
+                    }
+                }
+            });
+        
+
+
+        
+            // P, BM, BS, BP 점수를 저장할 객체 초기화
+            let surveyScores = { P: 0, BM: 0, BS: 0, BP: 0 };
+        
+            // 질문 데이터 정의 (각 선택지에 따라 점수를 부여)
+            const surveyData = [
+                // 질문 1 (슬라이드 6)
+                [
+                    { P: 0, BM: 2, BS: 2, BP: 1 },  // 처음이에요
+                    { P: 0, BM: 2, BS: 2, BP: 1 },  // 써봤는데 실패했어요
+                    { P: 1, BM: 0, BS: 1, BP: 1 }   // 생리컵을 사용하고 있어요
+                ],
+                // 질문 2 (슬라이드 7)
+                [
+                    { P: 1, BM: 1, BS: 2, BP: 1 },  // 모르겠어요
+                    { P: 1, BM: 2, BS: 2, BP: 1 },  // 짧은 편이에요
+                    { P: 2, BM: 1, BS: 2, BP: 1 }   // 긴 편이에요
+                ],
+                // 질문 3 (슬라이드 8)
+                [
+                    { P: 0, BM: 0, BS: 1, BP: 2 },  // 생리대를 거의 1-2시간마다 갈아요
+                    { P: 1, BM: 1, BS: 2, BP: 1 },  // 잘 모르겠어요
+                    { P: 1, BM: 2, BS: 1, BP: 0 }   // 적은 편이에요
+                ],
+                // 질문 4 (슬라이드 9)
+                [
+                    { P: 2, BM: 1, BS: 1, BP: 1 },  // 생리 안하는 느낌
+                    { P: 1, BM: 0, BS: 1, BP: 2 },  // 적은 교체 횟수
+                    { P: 2, BM: 1, BS: 1, BP: 1 }   // 압박감 없는 편안함
+                ]
+            ];
+        
+            // 추천 결과 표시 함수
+            function displayRecommendation() {
+                const maxCategory = Object.keys(surveyScores).reduce((a, b) => surveyScores[a] > surveyScores[b] ? a : b);
+                const resultContainer = document.querySelector('.result-content');
+                const recommendations = {
+                    P: 'P 제품을 추천드립니다.',
+                    BM: 'BM 제품을 추천드립니다.',
+                    BS: 'BS 제품을 추천드립니다.',
+                    BP: 'BP 제품을 추천드립니다.'
+                };
+                resultContainer.innerHTML = recommendations[maxCategory];
+            }
+     
+        </script>
         
         
-
-    </script>
 </body>
 </html>
