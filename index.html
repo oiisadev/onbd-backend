@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -973,6 +973,9 @@
                                     surveyScores.BM += score.BM;
                                     surveyScores.BS += score.BS;
                                     surveyScores.BP += score.BP;
+                                    
+                                    console.log(`질문 ${questionIndex + 1}의 선택 점수:`, score);
+                                    console.log("현재 누적 점수:", surveyScores);
         
                                 });
                             });
@@ -1043,6 +1046,11 @@
             // 추천 결과 표시 함수
             function displayRecommendation() {
                 const maxCategory = Object.keys(surveyScores).reduce((a, b) => surveyScores[a] > surveyScores[b] ? a : b);
+
+            // 최종 누적된 점수를 콘솔에 출력
+            console.log("Final Scores:", surveyScores);
+
+                
                 const resultContainer = document.querySelector('.result-content');
                 const recommendations = {
                     P: 'P 제품을 추천드립니다.',
